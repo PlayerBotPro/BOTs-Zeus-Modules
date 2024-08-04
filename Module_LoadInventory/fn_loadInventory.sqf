@@ -21,4 +21,8 @@ if (!isNil"_tempUnit") then {
 	] remoteExec ["addAction", 0, true];
 	systemchat format ["%1 success", _tempUnit];
 	deleteVehicle _logic;
+} else {
+	playSound ["beep", 1];
+	systemchat "ERROR";
+	deleteVehicle _logic;
 };
