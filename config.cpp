@@ -18,3 +18,14 @@ class CfgVehicles
     };
 };
 
+class CfgFunctions
+{
+    class BOT
+    {
+        class Module_LoadInventory
+        {
+            file="BOT_Module_LoadInventory\Module_LoadInventory";
+            class loadInventory {};
+        };
+    };
+};
