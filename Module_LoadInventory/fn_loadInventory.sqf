@@ -1,4 +1,4 @@
-_tempUnit = (nearestObjects [curatorMouseOver select 1, ["CAManBase"], 0.3]) select 0;
+_tempUnit = curatorMouseOver select 1;
 _tempUnit allowDamage false;
 _tempUnit disableAI "ALL";
 [_tempUnit,
