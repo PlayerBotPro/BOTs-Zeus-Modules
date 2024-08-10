@@ -29,25 +29,25 @@ if !(_unit isKindOf "CAManBase" && !(isPlayer _unit)) exitWith {
 	Work In Progress
 ***/
 
-
+//disable "open backpack in future?
 _unit allowDamage false;
 _unit disableAI "ALL";
 [
-	_unit,						//object
+	_unit,										 //object
 	[
-		"Load Target Inventory",//title
-		{
+		format ["Load %1 Inventory", name _unit],//title
+		{										 //script start
 			params ["_target", "_caller", "_actionId", "_arguments"];
 			[_target, [localNamespace, "tempInventory"]] call BIS_fnc_saveInventory;
 			[_caller, [localNamespace, "tempInventory"]] call BIS_fnc_loadInventory;
-		},						//script
-		nil,					//arguments
-		1.5,					//priority
-		true,					//showWindow
-		true,					//hideOnUse
-		"",						//shortcut
-		"true",					//condition
-		5						//radius
+		},										 //script end
+		nil,									 //arguments
+		1.5,									 //priority
+		true,									 //showWindow
+		true,									 //hideOnUse
+		"",										 //shortcut
+		"true",									 //condition
+		5										 //radius
 	]
 ] remoteExec ["addAction", 0, true];
-["Title", format ["%1 success", _unit], 0] call BIS_fnc_curatorHint;
+["Success", format ["%1 set", name _unit], 0] call BIS_fnc_curatorHint;
