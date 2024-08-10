@@ -21,7 +21,7 @@ if (isNull _unit) exitWith {
 	not man+not player=error
 ***/
 if !(_unit isKindOf "CAManBase" && !(isPlayer _unit)) exitWith {
-	[objNull, "ERROR: Player cant be target"] call BIS_fnc_showCuratorFeedbackMessage;
+	[objNull, "ERROR: Only AI can be target"] call BIS_fnc_showCuratorFeedbackMessage;
 };
 
 //when already set the action
