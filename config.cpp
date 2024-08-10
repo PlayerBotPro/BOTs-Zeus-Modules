@@ -11,6 +11,8 @@ class CfgVehicles
 	class Module_F;
     class BOT_Module_LoadInventory: Module_F
     {
+        //curatorCanAttach is important
+        curatorCanAttach = 1;
         scopeCurator=2;
         category = "Curator";
         displayName = "Set Unit Inventory Loadable";
