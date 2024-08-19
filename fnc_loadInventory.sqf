@@ -1,13 +1,10 @@
-// https// community.bistudio.com/wiki/Modules
+//https://github.com/zen-mod/ZEN/blob/75f210c10c1c5d2d94185cad8db92f9a999ecc39/addons/custom_modules/functions/fnc_init.sqf#L30
 params [
-	["_logic", objNull, [objNull]],		// Argument 0 is module logic
-	["_units", [], [[]]],				// Argument 1 is a list of affected units (affected by value selected in the 'class Units' argument))
-	["_activated", true, [true]]		// True when the module was activated, false when it is deactivated (i.e., synced triggers are no longer active)
+	["_position", [0, 0, 0]],
+	["_attachedObject", objNull]
 ];
 
-private _unit=attachedTo _logic;
-deleteVehicle _logic;
-
+_unit=_attachedObject;
 //when not placed on unit
 if (isNull _unit) exitWith {
 	[objNull, "ERROR: please place on soldier"] call BIS_fnc_showCuratorFeedbackMessage;
