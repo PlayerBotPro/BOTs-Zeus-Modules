@@ -2,6 +2,7 @@
 // #include "XEH_PREP.hpp"
 // ADDON = true;
 BOT_Module_loadInventory_fnc_loadInventory = compile preProcessFileLineNumbers 'BOT_Module_loadInventory\fnc_loadInventory.sqf';
+BOT_Module_loadInventory_fnc_addSpectatorAction = compile preProcessFileLineNumbers 'BOT_Module_loadInventory\fnc_addSpectatorAction.sqf';
 // if not a player we don't do anything
 if (!hasInterface) exitWith {}; 
 
@@ -9,7 +10,8 @@ if (!hasInterface) exitWith {};
 private _moduleList = [
     //module display name, func
 	// ["Save and Load Inventory Module",{_this call FUNC(loadInventory)}]
-    ["Set Target Inventory Loadable",{_this call BOT_Module_loadInventory_fnc_loadInventory}]
+    ["Set Target Inventory Loadable",{_this call BOT_Module_loadInventory_fnc_loadInventory}],
+    ["Set Target ACE Spectator",{_this call BOT_Module_loadInventory_fnc_addSpectatorAction}]
 ];
 
 {
