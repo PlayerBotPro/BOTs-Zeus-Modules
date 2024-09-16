@@ -47,4 +47,6 @@ _unit disableAI "ALL";
 		5										 //radius
 	]
 ] remoteExec ["addAction", 0, true];
+//lock backpack from opening
+[backpackContainer _unit, true] remoteExec ["lockInventory", 0, true];
 ["Success", format ["%1 set", name _unit], 0] call BIS_fnc_curatorHint;
