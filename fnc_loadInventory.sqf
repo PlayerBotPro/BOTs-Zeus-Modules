@@ -26,27 +26,31 @@ if !(_unit isKindOf "CAManBase" && !(isPlayer _unit)) exitWith {
 	Work In Progress
 ***/
 
-//disable "open backpack in future?
-_unit allowDamage false;
-_unit disableAI "ALL";
-[
-	_unit,										 //object
-	[
-		format ["Load %1 Inventory", name _unit],//title
-		{										 //script start
-			params ["_target", "_caller", "_actionId", "_arguments"];
-			[_target, [localNamespace, "tempInventory"]] call BIS_fnc_saveInventory;
-			[_caller, [localNamespace, "tempInventory"]] call BIS_fnc_loadInventory;
-		},										 //script end
-		nil,									 //arguments
-		1.5,									 //priority
-		true,									 //showWindow
-		true,									 //hideOnUse
-		"",										 //shortcut
-		"true",									 //condition
-		5										 //radius
-	]
-] remoteExec ["addAction", 0, true];
-//lock backpack from opening
-[backpackContainer _unit, true] remoteExec ["lockInventory", 0, true];
+_tempCode={
+	params ["_unit"];
+
+	_unit allowDamage false;
+	_unit disableAI "ALL";
+
+	//lock backpack from opening
+	backpackContainer _unit lockInventory true;
+
+	_unit addAction[
+			format ["Load %1 Inventory", name _unit],//title
+			{										 //script start
+				params ["_target", "_caller", "_actionId", "_arguments"];
+				[_target, [localNamespace, "tempInventory"]] call BIS_fnc_saveInventory;
+				[_caller, [localNamespace, "tempInventory"]] call BIS_fnc_loadInventory;
+			},										 //script end
+			nil,									 //arguments
+			1.5,									 //priority
+			true,									 //showWindow
+			true,									 //hideOnUse
+			"",										 //shortcut
+			"true",									 //condition
+			5										 //radius
+	];
+};
+
+[_unit, _tempCode] remoteExec ["call", 0, true];
 ["Success", format ["%1 set", name _unit], 0] call BIS_fnc_curatorHint;
