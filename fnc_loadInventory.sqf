@@ -31,6 +31,8 @@ _tempCode={
 
 	_unit allowDamage false;
 	_unit disableAI "ALL";
+	_unit enableSimulation false;
+	_unit setCaptive true;
 
 	//lock backpack from opening
 	backpackContainer _unit lockInventory true;
