@@ -39,8 +39,7 @@ _tempCode={
 			format ["Load %1 Inventory", name _unit],//title
 			{										 //script start
 				params ["_target", "_caller", "_actionId", "_arguments"];
-				[_target, [localNamespace, "tempInventory"]] call BIS_fnc_saveInventory;
-				[_caller, [localNamespace, "tempInventory"]] call BIS_fnc_loadInventory;
+				_caller setUnitLoadout getUnitLoadout _target;
 			},										 //script end
 			nil,									 //arguments
 			1.5,									 //priority
