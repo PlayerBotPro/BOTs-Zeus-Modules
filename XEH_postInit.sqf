@@ -18,7 +18,7 @@ private _moduleList = [
 
 {
     [   //category name
-        "$str_a3_cfgfactionclasses_curator", 
+        "BOTs", 
 		(_x select 0), 
 		(_x select 1)
     ] call zen_custom_modules_fnc_register;
