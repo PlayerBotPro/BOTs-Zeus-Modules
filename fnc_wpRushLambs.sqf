@@ -2,7 +2,7 @@ params ["_group", "_position", "_target"];
 
 //start
 
-[_group, false, true] call lambs_wp_fnc_taskReset;
+[_group, true, false] call lambs_wp_fnc_taskReset;
 
 _group setBehaviourStrong "CARELESS";
 _group setCombatMode "BLUE";
