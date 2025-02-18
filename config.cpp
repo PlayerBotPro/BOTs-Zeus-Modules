@@ -35,13 +35,28 @@ class cfgWaypoints {
 			{
 			};
         };
+         class BOT_RushLambs {
+			displayName="BOT_RushLambs";
+			displayNameDebug="BOT_RushLambs";
+			tooltip="BOT_RushLambs with disableAI";
+			icon="\a3\3DEN\Data\CfgWaypoints\Move_ca.paa";
+			file="BOT_Module_loadInventory\fnc_wpRushLambs.sqf";
+			class Attributes
+			{
+			};
+        };
     };
 };
 
 class ZEN_WaypointTypes {
     class BOT_Rush {
-        displayName = BOT_Rush;
+        displayName = "BOT_Rush";
         type = "SCRIPTED";
         script = "BOT_Module_loadInventory\fnc_wpRush.sqf";
+    };
+    class BOT_RushLambs {
+        displayName = "BOT_RushLambs";
+        type = "SCRIPTED";
+        script = "BOT_Module_loadInventory\fnc_wpRushLambs.sqf";
     };
 };
