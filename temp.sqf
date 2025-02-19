@@ -1,11 +1,14 @@
-_this setBehaviourStrong "CARELESS";
-_this setCombatMode "BLUE";
-_this enableAttack false;
-_this setSpeedMode "FULL";
-_this allowFleeing 0;
+_group=_this;
 
-_this setVariable ["lambs_danger_disableGroupAI", true];
-_this setVariable ["lambs_danger_tactics", true];
+[_group, true, false] call lambs_wp_fnc_taskReset;
+_group setBehaviourStrong "AWARE";
+
+_group enableAttack false;
+_group setSpeedMode "FULL";
+_group allowFleeing 0;
+
+_group setVariable ["lambs_danger_disableGroupAI", true];
+_group setVariable ["lambs_danger_tactics", true];
 
 {
     _x doWatch objNull;
@@ -22,6 +25,6 @@ _this setVariable ["lambs_danger_tactics", true];
     _x setUnitPos "UP";
     _x enableStamina false;
 
-} count (units _this);
+} count (units _group);
 
-_this setBehaviourStrong "AWARE";
+_group move [7000,7600,0];
