@@ -16,6 +16,7 @@
  *
  * Public: Yes
 */
+
 // the item box
 _box = cursorObject;
 _items = [];
@@ -48,3 +49,5 @@ _items = _items select {_x isEqualType "" && {_x != ""}};
 // 
 [_box, []] call ace_arsenal_fnc_initBox;
 [_box, _items] call ace_arsenal_fnc_addVirtualItems;
+
+[_box, _tempCode] remoteExec ["call", 0, true];
