@@ -23,8 +23,7 @@ _items = [];
 // get all kinds of items in the box
 _items pushBack itemCargo _box;
 _items pushBack magazineCargo _box;
-_items pushBack weaponCargo _box;
-_items pushBack weaponsItems _box;
+_items pushBack weaponsItemsCargo _box;
 _items pushBack backpackCargo _box;
 
 // get all kinds of items in the containers(uniform, vest, backpack) in the box
@@ -32,8 +31,7 @@ _items pushBack backpackCargo _box;
     _container = _x#1;
     _items pushBack itemCargo _container;
     _items pushBack magazineCargo _container;
-    _items pushBack weaponCargo _container;
-    _items pushBack weaponsItems _container;
+    _items pushBack weaponsItemsCargo _container;
     _items pushBack backpackCargo _container;
 } forEach everyContainer _box;
 
