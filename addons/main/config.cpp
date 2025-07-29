@@ -8,6 +8,7 @@ class CfgPatches
         // units[]={"BOT_Module_LoadInventory"};
         units[]={};
         requiredAddons[]={"zen_custom_modules"};
+        requiredVersion = 1.56;
     };
 };
 
