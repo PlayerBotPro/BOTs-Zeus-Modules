@@ -1,9 +1,9 @@
 //#include "script_component.hpp"
 // #include "XEH_PREP.hpp"
 // ADDON = true;
-BOT_Module_loadInventory_fnc_loadInventory = compile preprocessFileLineNumbers 'BOT\BOT_Zeus_Modules\addons\main\fnc_loadInventory.sqf';
-BOT_Module_loadInventory_fnc_addSpectatorAction = compile preprocessFileLineNumbers 'BOT\BOT_Zeus_Modules\addons\main\fnc_addSpectatorAction.sqf';
-BOT_Module_loadInventory_fnc_fireSupport = compile preprocessFileLineNumbers 'BOT\BOT_Zeus_Modules\addons\main\fnc_fireSupport.sqf';
+BOT_Module_loadInventory_fnc_loadInventory = compile preprocessFileLineNumbers 'BOT\BOT_Zeus_Modules\addons\main\functions\fnc_loadInventory.sqf';
+BOT_Module_loadInventory_fnc_addSpectatorAction = compile preprocessFileLineNumbers 'BOT\BOT_Zeus_Modules\addons\main\functions\fnc_addSpectatorAction.sqf';
+BOT_Module_loadInventory_fnc_fireSupport = compile preprocessFileLineNumbers 'BOT\BOT_Zeus_Modules\addons\main\functions\fnc_fireSupport.sqf';
 // if not a player we don't do anything
 if (!hasInterface) exitWith {}; 
 
