@@ -6,7 +6,7 @@ class cfgWaypoints {
 			displayNameDebug="BOT_Rush";
 			tooltip="BOT_Rush with disableAI";
 			icon="\a3\3DEN\Data\CfgWaypoints\Move_ca.paa";
-			file="BOT_Module_loadInventory\fnc_wpRush.sqf";
+			file="BOT\BOT_Zeus_Modules\addons\main\fnc_wpRush.sqf";
 			class Attributes
 			{
 			};
@@ -16,7 +16,7 @@ class cfgWaypoints {
 			displayNameDebug="BOT_RushLambs";
 			tooltip="BOT_RushLambs with disableAI";
 			icon="\a3\3DEN\Data\CfgWaypoints\Move_ca.paa";
-			file="BOT_Module_loadInventory\fnc_wpRushLambs.sqf";
+			file="BOT\BOT_Zeus_Modules\addons\main\fnc_wpRushLambs.sqf";
 			class Attributes
 			{
 			};

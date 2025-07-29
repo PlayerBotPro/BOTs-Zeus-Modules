@@ -4,6 +4,6 @@ class Extended_PostInit_EventHandlers
 	class BOT_Module_loadInventory
 	{
 		// init= QUOTE(call COMPILE_FILE(XEH_postInit));
-		init="call compile preprocessFileLineNumbers 'BOT_Module_loadInventory\XEH_postInit.sqf'";
+		init="call compile preprocessFileLineNumbers 'BOT\BOT_Zeus_Modules\addons\main\XEH_postInit.sqf'";
 	};
 };
