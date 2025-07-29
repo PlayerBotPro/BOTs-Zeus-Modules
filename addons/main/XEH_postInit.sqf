@@ -4,6 +4,7 @@
 BOT_Zeus_Modules_fnc_loadInventory = compile preprocessFileLineNumbers 'BOT\BOT_Zeus_Modules\addons\main\functions\fnc_loadInventory.sqf';
 BOT_Zeus_Modules_fnc_addSpectatorAction = compile preprocessFileLineNumbers 'BOT\BOT_Zeus_Modules\addons\main\functions\fnc_addSpectatorAction.sqf';
 BOT_Zeus_Modules_fnc_fireSupport = compile preprocessFileLineNumbers 'BOT\BOT_Zeus_Modules\addons\main\functions\fnc_fireSupport.sqf';
+BOT_Zeus_Modules_fnc_limitedAceArsenal = compile preprocessFileLineNumbers 'BOT\BOT_Zeus_Modules\addons\main\functions\fnc_limitedAceArsenal.sqf';
 // if not a player we don't do anything
 if (!hasInterface) exitWith {}; 
 
@@ -13,7 +14,8 @@ private _moduleList = [
 	// ["Save and Load Inventory Module",{_this call FUNC(loadInventory)}]
     ["Set Target Inventory Loadable",{_this call BOT_Zeus_Modules_fnc_loadInventory}],
     ["Set Target ACE Spectator",{_this call BOT_Zeus_Modules_fnc_addSpectatorAction}],
-    ["Fire Artillery at",{_this call BOT_Zeus_Modules_fnc_fireSupport}]
+    ["Fire Artillery at",{_this call BOT_Zeus_Modules_fnc_fireSupport}],
+    ["Limited ACE Arsenal",{_this call BOT_Zeus_Modules_fnc_limitedAceArsenal}]
 ];
 
 {

@@ -1,53 +1,61 @@
 /*
- * Author: Alganthe, johnb43
+ * Author: PlayerBot
  * Add limited ACE arsenal to a box, available item is all items in the box
  *
  * Arguments:
- * 0: Target <OBJECT>
- * 1: Items <BOOL or ARRAY of STRINGs>
- * 2: Initialize globally <BOOL> (default: true)
+ * 0: Position(not used) <ARRAY>
+ * 1: Item box <OBJECT>
  *
  * Return Value:
  * None
  *
  * Example:
- * [_box, ["MyItem1", "MyItem2", "MyItemN"]] call ace_arsenal_fnc_initBox
- * [_box, true] call ace_arsenal_fnc_initBox
+ * _box call BOT_Zeus_Modules_fnc_limitedAceArsenal;
  *
  * Public: Yes
 */
 
-// the item box
-_box = cursorObject;
-_items = [];
+params [
+	["_position", [0, 0, 0]],
+	["_attachedObject", objNull]
+];
 
-// get all kinds of items in the box
-_items pushBack itemCargo _box;
-_items pushBack magazineCargo _box;
-_items pushBack weaponsItemsCargo _box;
-_items pushBack backpackCargo _box;
+_fnc_temp = {
+    params ["_box"];
 
-// get all kinds of items in the containers(uniform, vest, backpack) in the box
-{
-    _container = _x#1;
-    _items pushBack itemCargo _container;
-    _items pushBack magazineCargo _container;
-    _items pushBack weaponsItemsCargo _container;
-    _items pushBack backpackCargo _container;
-} forEach everyContainer _box;
+    // the item box
+    // _box = cursorObject;
+    _items = [];
 
-// flatten the array, remove duplicates, remove empty string and number
-_items = flatten _items;
-_items = _items arrayIntersect _items;
-_items = _items select {_x isEqualType "" && {_x != ""}};
+    // get all kinds of items in the box
+    _items pushBack itemCargo _box;
+    _items pushBack magazineCargo _box;
+    _items pushBack weaponsItemsCargo _box;
+    _items pushBack backpackCargo _box;
 
-//_items
+    // get all kinds of items in the containers(uniform, vest, backpack) in the box
+    {
+        _container = _x#1;
+        _items pushBack itemCargo _container;
+        _items pushBack magazineCargo _container;
+        _items pushBack weaponsItemsCargo _container;
+        _items pushBack backpackCargo _container;
+    } forEach everyContainer _box;
 
-// seperate with change line
-// _items joinString toString [10];
+    // flatten the array, remove duplicates, remove empty string and number
+    _items = flatten _items;
+    _items = _items arrayIntersect _items;
+    _items = _items select {_x isEqualType "" && {_x != ""}};
 
-// 
-[_box, []] call ace_arsenal_fnc_initBox;
-[_box, _items] call ace_arsenal_fnc_addVirtualItems;
+    //_items
 
-[_box, _tempCode] remoteExec ["call", 0, true];
+    // seperate with change line
+    // _items joinString toString [10];
+
+    // 
+    [_box, []] call ace_arsenal_fnc_initBox;
+    [_box, _items] call ace_arsenal_fnc_addVirtualItems;
+};
+
+[_attachedObject, _fnc_temp] remoteExec ["call", 0, true];
+["Success", format ["%1 set as arsenal", typeOf _attachedObject], 0] call BIS_fnc_curatorHint;
