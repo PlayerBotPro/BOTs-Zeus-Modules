@@ -7,5 +7,7 @@ class CfgPatches
         units[]={};
         requiredAddons[]={"zen_custom_modules"};
         requiredVersion = 2.20;
+        #include "..\script_version.hpp"
+        versionAr[] = {MAJOR, MINOR, PATCH};
     };
 };
