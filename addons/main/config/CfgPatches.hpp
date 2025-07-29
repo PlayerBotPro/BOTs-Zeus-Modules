@@ -1,7 +1,7 @@
 class CfgPatches
 {
     //class ADDON
-    class BOT_Module_loadInventory
+    class BOTs_Zeus_Modules_main
     {
         // units[]={"BOT_Module_LoadInventory"};
         units[]={};
