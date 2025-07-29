@@ -1,9 +1,9 @@
 //#include "script_component.hpp"
 // #include "XEH_PREP.hpp"
 // ADDON = true;
-BOT_Module_loadInventory_fnc_loadInventory = compile preProcessFileLineNumbers 'BOT_Module_loadInventory\fnc_loadInventory.sqf';
-BOT_Module_loadInventory_fnc_addSpectatorAction = compile preProcessFileLineNumbers 'BOT_Module_loadInventory\fnc_addSpectatorAction.sqf';
-BOT_Module_loadInventory_fnc_fireSupport = compile preProcessFileLineNumbers 'BOT_Module_loadInventory\fnc_fireSupport.sqf';
+BOT_Module_loadInventory_fnc_loadInventory = compile preprocessFileLineNumbers 'BOT_Module_loadInventory\fnc_loadInventory.sqf';
+BOT_Module_loadInventory_fnc_addSpectatorAction = compile preprocessFileLineNumbers 'BOT_Module_loadInventory\fnc_addSpectatorAction.sqf';
+BOT_Module_loadInventory_fnc_fireSupport = compile preprocessFileLineNumbers 'BOT_Module_loadInventory\fnc_fireSupport.sqf';
 // if not a player we don't do anything
 if (!hasInterface) exitWith {}; 
 
