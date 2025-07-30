@@ -5,4 +5,7 @@ workshop = [
     "463939057", # ACE3
     "3499977893", # Advanced Developer Tools
 ]
-mission = "BasicMission.VR" # Mission to launch directly into the editor with
+mission = "BasicMission.VR" # Mission to launch directly into the editor with   
+parameters = [
+    "-noPause",
+]
