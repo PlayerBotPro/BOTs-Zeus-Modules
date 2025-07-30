@@ -9,6 +9,8 @@ BOT_Zeus_Modules_fnc_limitedAceArsenal = compile preprocessFileLineNumbers 'BOT\
 if (!hasInterface) exitWith {}; 
 
 // zeus modules
+// Using BI way to create modules will need server + all clients load this addon
+// https://community.bistudio.com/wiki/Modules
 private _moduleList = [
     //module display name, func
 	// ["Save and Load Inventory Module",{_this call FUNC(loadInventory)}]
