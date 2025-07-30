@@ -5,6 +5,7 @@ BOT_Zeus_Modules_fnc_loadInventory = compile preprocessFileLineNumbers 'BOT\BOT_
 BOT_Zeus_Modules_fnc_addSpectatorAction = compile preprocessFileLineNumbers 'BOT\BOT_Zeus_Modules\addons\main\functions\fnc_addSpectatorAction.sqf';
 BOT_Zeus_Modules_fnc_fireSupport = compile preprocessFileLineNumbers 'BOT\BOT_Zeus_Modules\addons\main\functions\fnc_fireSupport.sqf';
 BOT_Zeus_Modules_fnc_limitedAceArsenal = compile preprocessFileLineNumbers 'BOT\BOT_Zeus_Modules\addons\main\functions\fnc_limitedAceArsenal.sqf';
+BOT_Zeus_Modules_fnc_infiniteSmoke_White = compile preprocessFileLineNumbers 'BOT\BOT_Zeus_Modules\addons\main\functions\fnc_infiniteSmoke_White.sqf';
 // if not a player we don't do anything
 if (!hasInterface) exitWith {}; 
 
@@ -17,7 +18,8 @@ private _moduleList = [
     ["Set Target Inventory Loadable",{_this call BOT_Zeus_Modules_fnc_loadInventory}],
     ["Set Target ACE Spectator",{_this call BOT_Zeus_Modules_fnc_addSpectatorAction}],
     ["Fire Artillery at",{_this call BOT_Zeus_Modules_fnc_fireSupport}],
-    ["Limited ACE Arsenal",{_this call BOT_Zeus_Modules_fnc_limitedAceArsenal}]
+    ["Limited ACE Arsenal",{_this call BOT_Zeus_Modules_fnc_limitedAceArsenal}],
+    ["Infinite Smoke - White",{_this call BOT_Zeus_Modules_fnc_infiniteSmoke_White}]
 ];
 
 {
