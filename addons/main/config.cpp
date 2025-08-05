@@ -2,7 +2,7 @@
 
 #include "config\CfgPatches.hpp"
 
-#include "config\XEH.hpp"
+#include "config\CfgEventHandlers.hpp"
 
 #include "config\CfgWaypoints.hpp"
 
